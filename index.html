@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#14100a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Ordine Colazioni</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header id="app-header">
+    <img id="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAPPklEQVR4Xu2dbczO5RvHjzukSFFEUsrjQkoeQxpKExGF0RSrF/WiXvAib+qFXpSNGaMtm1pJeVgNkTzVMmtLobW0WGseIhTRKsrT3/ena3/37b7v6/dwPp/fY2sm5+88zvM4v5/rOH/XdT5UiMj5C//RGIEoI1BBAKIcd3b6vwgQAEoh6ggQgKiHn52/DICvGRNGIOAI9KjSNwIQ8GCza5dHgABQFVFHgABEPfzsPAGgBqKOAAGIevjZeQJADUQdAQIQ9fCz8wSAGog6AgQg6uFn5wmAQQ10P69moe22CvxeSVMRAQKgIoqX1KFK5HmbRTiyRY4AZIvXZaVtC75c8wlE7REiAOUUVOXfXRd8ue4QiMoRIgDlFHPh330XfU1dJAwiBKAWAEIVftUuxwwCAQhsipMiodVaJDYYCMB/cojl0z4tILGAED0AFH7tSIQOQrQAUPhpc8HFcqGCEB0AFH424Yf+whwNABR+MeGHCkIUAFD8asVfqi2EaVHQAFD4eoQfUjYIFgCK34z4fc8GwQFA4ZsVvu/ZICgAKH674vcxGwQDAMXvhvh9g8B7ACh8t4Tv25TIawAofrfF70M28BYAit8P8bsOgZcAUPx+id9lCLwDgOL3U/yuQuAVABS/3+J3EQJvAKD4wxC/axB4AQDFH5b4XYLAeQAo/jDF7woETgNA8YctfhcgcBYAij8O8duGwEkAKP64xG8TAucAoPjjFL8tCAhA3Hpzrvemt1k6BQA//Z3To5UGmYTAGQAofitac9apKQicAIDid1aHVhtmAgICYHWI6by2CEQBAD/9CYFNCKxmAFvif+aZZ2ThwoValDdy5EhZsWKFlrrTVvrZZ5/J8OHD5e+//077SO5yvXr1knXr1knjxo1z11HuQZ2ZgACUi37Gf7cNwPr16+XRRx+VkydPZmx59uJ9+/aVtWvXyrXXXpv94QxPBAmArU9/xD3UDPDxxx/L6NGj5Z9//skgr3xFBwwYIGvWrJFrrrkmXwUZn9IFgZUMYFP8oQKwatUqGTNmjPz7778ZpZW9+MCBA2X16tXSoEGD7A8XeEIHBASgwIBU96iNKdAHH3wg48ePl9OnTyvuzeXVDRkyJHnHufrqq7X7quogCABsf/qHlgGWLFkiEydOlDNnzmgX5NChQ+XDDz+Uq666SruvmhyohsB4BiAA6rTz7rvvyqRJk+Ts2bPqKq2hphEjRsjy5cvlyiuv1O6rNgdeA+CC+EPJAG+99VbyMn/u3DntgsSLNTJNvXr1tPtK40AlBEYzAAFIM7zly7zxxhvy3HPPyfnz58sXLlhi7NixsnjxYqlbt27BmtQ97iUArojf9wwwb948eeGFF4yI/4knnpC3335b6tSpo069impSBYGxDEAAio/87NmzZcqUKcUrSlHDU089JW+++aZcccUVKUqbL+IVAC6J39cMMGPGDJk2bZoRpeHdAtMsV8VfCoIKCIxkAAJQTLevvPKKvPzyy8UqSfk03i3mz58vFRUVKZ+wV8wLAFwTv28ZAMIHACYM7xZz5swx4UqZj6IQaM8ABCD/WGPKg6mPCZs6darMnDnThCulPghAjnD6sBgOL7t46TVhAO3VV1814Uq5D6cBcPHT3/UpEL7bx1QEX3easJdeekmmT59uwpU2H0Ug0DoFIgDZxhzix0sovoExYRA+APDdnATAVfG7mgGwpAFTMyxxMGGvvfaavPjiiyZcGfGRFwJtGYAApB93LGabPHmyLFq0KP1DBUrOmjXL2A9qBZqZ6VECkCFcLr0EYxkzljNjsZkJmzt3rjz//PMmXBn14RQALn/6uzQFwgYWbGTBhhbdhh+2Xn/9dXn22Wd1u7JWfx4ItEyBCED5UyGwdRFbGLGVUbdhScOCBQvk6aef1u3Kav0EIGX4bU+BsGkda+yxiV23Qfx4sX7yySd1u7JePwFIOQQ2AcBxJTi2BMeX6DYsY37nnXdkwoQJul05Ub8TALg+/bH5DoCDqnBgFQ6u0m3YwPLee+8l06yYLCsEyt8BCED1J8P9+eefMmzYMNm8ebN2PWLr4tKlS2XUqFHafbnmgACkGBHTU6A//vhDcKLCF198kaJ1xYrUr18/2bz+yCOPFKvI06cJQIqBMwnA8ePH5aGHHpKtW7emaFmxIjiuBMeWALZYzSoAPkx/TL4DHDt2TB588EHZvn27dj3ioKqVK1cm/mK3LBAofQcgACKlk+F+/fVXeeCBB+Tbb7/VrseGDRvKRx99JDiykCZCAMqoQPcUCKs5Bw8eLDt37tSuRxxOi98T7rvvPu2+fHFAACwC0KdPH8G8/4cfftCuFxxL/sknn8i9996r3ZdPDgiARQBMCQUXUuBiClxQQascAQIQOADXX3+9bNiwQe655x5qv5oIEICAAWjatKls3LhR7rrrLoq/hghYAcCXb4B0fw2qU5U33nijbNq0Sbp06aLTTRB1p4VA2degBECvbm666aZE/HfccYdeR4HUTgBqGUidX4Pq0M/NN98sn376qXTo0EFH9UHWSQACAeDWW29NxN+2bdsghaqrUwQgAABuu+22ZOk0/qRliwAB8BwAfOJD/Lfccku2kWfpJAIEwGMAsKQZvyTzkz8/zQTAYwDQdCyqW7ZsmfVL6fJL0O6TBMBzANB8bJ/EkSm2b2a0K+V83glAAACgCw8//HCyyQXTIlr6CBCAQABAN7CjDLez27ygOr303ChJAAICAF3BTi/s+MLOL1r5CBCAwABAdwYNGpTs/GrQoEF5BUReggAECAC6dP/998uaNWsE2yBpNUeAAAQKALqF7Y/YBontkLTqI0AAAgYAXevXr5+sXbtWGjVqRAaqiQABCBwAdA97gbEnGHuDaZUjQAAiAABdxJ5gHLR73XXXkYFLImAcAPj2ZVOMzv0AzZs3F5wJhDu/TFmPHj0SCJo0aWLKpdN+0oofnVC2I4wAXNQE1vA8/vjjMmnSJMHdX6YMG+SxUR4b5mM3AlBGATozQOlkuPfffz+5+8skBHfffXeyYf6GG26ImgEC4AAAaAJOacblFLgIz5R17do1gaBZs2amXDrnhwA4AgCagdWcuAgPF+KZss6dOyfbKHGKRIxGABwCAE3BQrZx48YJLsYzZZ06dUpOkWjRooUpl874IQCOAYDmrF69Wh577DGjEHTs2DHZVokjVWIyawAgyD58FWriJbg6wWH5Am6HxC2RpgxHqWA6hKNVYrAs4kc8lH4NSgD+fz9ATWLDgba4JfLUqVPG9NiuXbskE7Rq1cqYT1uOCECKyNvKAKWm4VuaESNGCK5MNWVt2rRJIMA5QyEbAUgxurYBQBMxLcFFdrg61ZTdfvvtCQStW7c25dK4H+sA+DANcgEAxOnzzz9Prk7966+/jAkF4gcEgCE0yyp+Le8ABKD6e4JrEtuWLVuSWx1xj7Apw2FbgCC04xYJQEoFuZIBSs3F/cGAAPcJmzJ8KwQI2rdvb8qldj8EIGWIXQMAzf7yyy+T0x9OnDiRshfFi7Vs2TJ5F8HvBSGYMwC4Pg1yEQDE7KuvvpIhQ4Ykl+yZMvxSDAh8v3cgj/i1vQMQgBW59btt27bkCJTff/89dx1ZH8QeBiybwBoiX40AZBg5VzNAqQvffPNNcsn20aNHM/SqWFGsHgUEd955Z7GKLD3tHAAuZwHXAUDscMM8Ltv+7bffjEnK1wv48opf6xSIABTX7XfffZdAcOTIkeKVpawBO8rwS3W3bt1SPmG/mLMAuAqBDxmgJKvvv/8+geDQoUPGlIa9xdhe2b17d2M+8zoqIn7tGYAA5B3Wys/t2rVLBg4cKL/88ouaClPUgpvosdG+Z8+eKUrbK0IAcsTepwxQ6t7u3buTs0EPHDiQo8f5HsFRK1i92rt373wVGHjKeQBczAI+AoA4/vjjjwkE+/fvNyCtiy5w6BZOoOvbt68xn2kdFRW/kSkQAUg7nOnK/fTTTwkEe/fuTfeAglI4gxQQ9O/fX0Ft6qrwBgDXIPA1A5Sks2fPnuSdAH+aMkCAU6kHDBhgymWtflSI31gGIADqNbNv374EAmQEU4Z7CbC3GX5tm3cAuASB7xmgJL6ff/45ESPeDUwZbqjBJR34ataWqRK/0QxAAPTI5eDBgwkE+JbIlOGuMlzXhIV7NsxbAFyBIJQMUBIffh/AizEu1zZlgAC3V2Ifg0lTKX7jGYAA6JPK4cOHEwjwy7Epw9WtOPkO2zpNmfcAuABBaBmgJD6sGcLcHGuITBku8cYZqDjlQrepFr+VDEAA9MoEq0cBAVaTmrJ69erJsmXLkvOOdFowANiGINQMUBIf9hFgU82OHTt06rFS3XXr1hUcCY+7EXSYDvFbywClANk6RjF0ABBf7CgDBNhhZsoAweLFi2Xs2LFKXeoSPwFQOkwXKytdkKGh6sxVYm8xNtpv3bo187N5H6hTp44sWrQoORJelQULgO2pkKoBYj36IqBT/NYzgO2pkL5hY80qIqBb/ARAxSixDm0RiAYAToW0acjbik2I35kMwKmQtzrV0nBT4ncOAGYCLXryqlKT4icAXkkjjsZGDwCzQBxCr66XpsXvZAbg+0CcANgQv9MAMBPEA4It8TsPACEIHwKb4vcCAEIQLgS2xe8NAIQgPAhcEL9XABCCcCBwRfzeAUAI/IfAJfF7CQAh8BcC18TvLQCEwD8IXBS/1wAQAn8gcFX83gNACNyHwGXxBwFASQK2Nti7L0E7LXRd+KWo9KgSnooLfz9/6f/72k78cnklBLnCpvwhX8QfVAZgJlCu41wV+iT+IAEgCLl0W/gh34Qf5BSo6ihySlRY16kq8FX8QWeAS0eOIKTSceZCPgs/igxACDJrOvUDIYg/mgxAEFLrumzBUIQfXQbg+0FZbddaIDThRw8Avy1KB0SowicAVcafL8qVAxK68AlADR+AsYMQi/AJQIoZQCwwxCb6S4c+qLVAKTSdq0ioIMQsfGaAXCiI+A4DRV954JkBcoLgy7dIFHztA0wACgLg2u8LFHy2ASUA2eJVqLSq6RNFXmgYKj1MANTFkjV5GAEC4OGgscnqIkAA1MWSNXkYAQLg4aCxyeoiQADUxZI1eRgBAuDhoLHJ6iJAANTFkjV5GAEC4OGgscnqIkAA1MWSNXkYAQLg4aCxyeoiUBYAda5YEyPgfgQuOxvU/SazhYyAuggQAHWxZE0eRoAAeDhobLK6CPwPXBvPahVqfhwAAAAASUVORK5CYII=" alt="K">
+    <h1>☕ ORDINE COLAZIONI</h1>
+    <div id="header-right">
+      <button id="btn-invia-hdr">
+        <span class="icon">📤</span>INVIA
+      </button>
+      <span id="badge-count">0</span>
+      <span id="sync-status" class="local">◌</span>
+    </div>
+  </header>
+
+  <!-- ═══ TOOLBAR FILTRI ═══ -->
+  <nav id="toolbar">
+    <button class="filter-btn active" data-filter="all">TUTTI</button>
+    <button class="filter-btn" data-filter="selected">DA ORDINARE</button>
+  </nav>
+
+  <!-- ═══ LISTA ARTICOLI ═══ -->
+  <main id="products-list"></main>
+
+  <!-- ═══ AREA STAMPA ═══ -->
+  <div id="print-area"></div>
+
+  <!-- ═══ BOTTOM BAR ═══ -->
+  <nav id="bottom-bar">
+    <button class="bottom-btn" id="btn-add-extra">
+      <span class="icon">＋</span><span>EXTRA</span>
+    </button>
+    <button class="bottom-btn" id="btn-print">
+      <span class="icon">🖨</span><span>STAMPA</span>
+    </button>
+    <button class="bottom-btn" id="btn-altro">
+      <span class="icon">⋯</span><span>ALTRO</span>
+    </button>
+    <button class="bottom-btn" id="btn-reset">
+      <span class="icon">↺</span><span>RESET</span>
+    </button>
+  </nav>
+
+
+  <!-- ═══ PANEL: INVIA ORDINE ═══ -->
+  <div class="panel-overlay hidden" id="invia-panel">
+    <div class="panel-box">
+      <div class="panel-header">
+        <h2>📤 INVIA ORDINE</h2>
+        <button class="panel-close" id="invia-close">CHIUDI</button>
+      </div>
+      <div class="panel-body" id="invia-body"></div>
+    </div>
+  </div>
+
+  <!-- ═══ PANEL: ALTRO ═══ -->
+  <div class="panel-overlay hidden" id="altro-panel">
+    <div class="panel-box" style="height:auto;max-height:55vh;border-radius:12px 12px 0 0;">
+      <div class="panel-header">
+        <h2>⋯ ALTRO</h2>
+        <button class="panel-close" id="altro-close">CHIUDI</button>
+      </div>
+      <div class="panel-body" style="padding:14px;">
+        <button class="altro-btn" id="btn-storico">
+          <span>📋</span><span>STORICO ORDINI</span>
+        </button>
+        <button class="altro-btn" id="btn-stats">
+          <span>📊</span><span>STATISTICHE</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PANEL: STORICO ═══ -->
+  <div class="panel-overlay hidden" id="storico-panel">
+    <div class="panel-box">
+      <div class="panel-header">
+        <h2>📋 STORICO ORDINI</h2>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <button onclick="salvaOrdineCorrente()" style="background:#1e3e0e;color:#9ad46a;border:1px solid #3a6a20;font-family:monospace;font-size:0.68rem;font-weight:700;padding:5px 10px;border-radius:3px;cursor:pointer;">💾 SALVA</button>
+          <button class="panel-close" id="storico-close">CHIUDI</button>
+        </div>
+      </div>
+      <div class="panel-body" id="storico-body">
+        <div class="empty-panel">Caricamento…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PANEL: STATS ═══ -->
+  <div class="panel-overlay hidden" id="stats-panel">
+    <div class="panel-box">
+      <div class="panel-header">
+        <h2>📊 STATISTICHE ORDINI</h2>
+        <button class="panel-close" id="stats-close">CHIUDI</button>
+      </div>
+      <div class="panel-body" id="stats-body">
+        <div class="empty-panel">Caricamento…</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ MODAL: NOTE ═══ -->
+  <div class="modal-overlay hidden" id="note-modal">
+    <div class="modal-box">
+      <h2>📝 NOTE — <span id="note-modal-title"></span></h2>
+      <label for="note-input">Nota ordine</label>
+      <textarea id="note-input" placeholder="es. solo se in offerta, marca specifica…" rows="3"></textarea>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="note-modal-cancel">ANNULLA</button>
+        <button class="btn-ok"     id="note-modal-ok">SALVA</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: EXTRA ═══ -->
+  <div class="modal-overlay hidden" id="extra-modal">
+    <div class="modal-box">
+      <h2>＋ ARTICOLO EXTRA</h2>
+      <label for="extra-name">Nome articolo *</label>
+      <input type="text" id="extra-name" placeholder="es. Succo Mango…">
+      <label for="extra-cat">Categoria</label>
+      <select id="extra-cat">
+        <option value="Extra">Extra</option>
+        <option value="Cornetti">Cornetti</option>
+        <option value="Dolci">Dolci</option>
+        <option value="Cereali">Cereali</option>
+        <option value="Marmellate">Marmellate</option>
+        <option value="Dolcificanti">Dolcificanti</option>
+        <option value="Yogurt">Yogurt</option>
+        <option value="Infusi">Infusi</option>
+        <option value="Bevande">Bevande</option>
+        <option value="Latticini">Latticini</option>
+        <option value="Senza Glutine">Senza Glutine</option>
+        <option value="Monouso">Monouso</option>
+        <option value="Varie">Varie</option>
+      </select>
+      <label for="extra-qty">Quantità</label>
+      <input type="number" id="extra-qty" value="1" min="1" max="999">
+      <label for="extra-note">Note (opzionale)</label>
+      <input type="text" id="extra-note" placeholder="es. per evento, senza lattosio…">
+      <div class="modal-actions">
+        <button class="btn-cancel" id="extra-modal-cancel">ANNULLA</button>
+        <button class="btn-ok"     id="extra-modal-ok">AGGIUNGI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: ELIMINA EXTRA ═══ -->
+  <div class="modal-overlay hidden" id="del-modal">
+    <div class="modal-box">
+      <h2>✕ ELIMINA EXTRA</h2>
+      <p style="font-size:0.82rem;color:#aaa;margin-bottom:4px">
+        Eliminare <strong id="del-modal-name" style="color:#e0b050"></strong>?
+      </p>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="del-modal-cancel">ANNULLA</button>
+        <button class="btn-danger" id="del-modal-ok">ELIMINA</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: RESET ═══ -->
+  <div class="modal-overlay hidden" id="reset-modal">
+    <div class="modal-box">
+      <h2>↺ RESET ORDINE</h2>
+      <p style="font-size:0.82rem;color:#aaa;margin-bottom:4px">
+        Azzera selezioni, quantità, note e articoli extra.<br>
+        <strong style="color:#cc5050">Operazione irreversibile.</strong>
+      </p>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="reset-modal-cancel">ANNULLA</button>
+        <button class="btn-danger" id="reset-modal-ok">RESET</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ SCRIPT ═══ -->
+  <script src="products.js"></script>
+  <script src="contacts.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
